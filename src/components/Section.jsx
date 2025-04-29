@@ -1,4 +1,4 @@
-import "../style/section.css";
+import "../style/Section.css";
 import Form from "./Form";
 
 export default function Section({ title, fields }) {

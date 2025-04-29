@@ -1,0 +1,24 @@
+form,
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  gap: 10px;
+}
+
+label {
+  text-align: left;
+}
+
+.required::after {
+  content: " *";
+  color: red;
+}
+
+input {
+  padding: 8px 5px;
+  border-radius: 8px;
+  font-size: 1em;
+}
