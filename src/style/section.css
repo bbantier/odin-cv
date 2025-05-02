@@ -1,5 +1,16 @@
+:root {
+  --shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+div#root {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .section {
   padding: 15px;
   width: 100%;
-  border: 1px solid black;
+  box-shadow: var(--shadow);
+  border-radius: 15px;
 }
