@@ -16,9 +16,8 @@ function App() {
 
   return (
     <>
-      <h1>Build your CV</h1>
+      <h1 className="noprint">Build your CV</h1>
       <Section title="Information" fields={info} />
-      <Section title="Education" fields={edu} />
     </>
   );
 }

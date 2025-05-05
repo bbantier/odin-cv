@@ -1,8 +1,8 @@
 import "../style/Form.css";
 
-export default function Form({ fields }) {
+export default function Form({ fields, onSubmit }) {
   return (
-    <form>
+    <form action={onSubmit}>
       {fields.map((field) => {
         return (
           <div key={field.name} className="input-wrapper">
