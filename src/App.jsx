@@ -10,14 +10,14 @@ function App() {
 
   const edu = [
     { name: "school", label: "School Name", type: "text", required: true },
-    { name: "study", label: "Title of Study", type: "text", required: true },
-    { name: "study-date", label: "Date of Study", type: "number", required:true },
+    { name: "study", label: "Title", type: "text", required: true },
+    { name: "study-year", label: "Year", type: "number", required:true },
   ];
 
   return (
     <>
       <h1 className="noprint">Build your CV</h1>
-      <Section title="Information" fields={info} />
+      <Section title={"Information"} fields={info} />
     </>
   );
 }
