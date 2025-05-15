@@ -17,6 +17,7 @@ div#root {
 }
 
 .section.sent {
+  position: relative;
   width: 19cm;
   box-shadow: none;
   border-radius: 0;
@@ -29,4 +30,10 @@ h2.section-title {
 
 .section.sent h2.section-title {
   text-align: center;
+}
+
+.edit-btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
 }
