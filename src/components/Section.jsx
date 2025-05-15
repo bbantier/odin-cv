@@ -3,7 +3,7 @@ import "../style/Form.css";
 import { useState } from "react";
 
 export default function Section({ title, fields }) {
-  const [values, setValues] = useState({});
+  const [data, setData] = useState({});
   const [isSent, setIsSent] = useState(false);
 
   function handleSubmit(e) {
@@ -12,14 +12,16 @@ export default function Section({ title, fields }) {
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
 
-    setValues(formJson);
+    setData(formJson);
     setIsSent(!isSent);
 
     console.log(formJson);
   }
 
+  const entries = Object.entries(data);
+
   return (
-    <section className="section">
+    <section className={"section" + (isSent ? " sent" : "")}>
       <h2>{title}</h2>
       {!isSent ? (
         <form onSubmit={handleSubmit}>
@@ -34,7 +36,12 @@ export default function Section({ title, fields }) {
           <button type="submit">Submit</button>
         </form>
       ) : (
-        <p>{values.fname}</p>
+        <div>
+          {entries.map((entry) => {
+            const [key, value] = entry;
+            return <p className={key} key={key}>{value}</p>;
+          })}
+        </div>
       )}
     </section>
   );
