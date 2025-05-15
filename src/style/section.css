@@ -2,15 +2,10 @@
   --shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
 }
 
-div#root {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 .section {
+  margin: 0 auto;
   padding: 15px;
-  width: 100%;
+  width: 50%;
   box-shadow: var(--shadow);
   border-radius: 15px;
   transition: width 0.1s linear, box-shadow 0.1s ease-out;
@@ -35,5 +30,5 @@ h2.section-title {
 .edit-btn {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 15px;
 }
