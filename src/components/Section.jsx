@@ -22,7 +22,7 @@ export default function Section({ title, fields }) {
 
   return (
     <section className={"section" + (isSent ? " sent" : "")}>
-      <h2>{title}</h2>
+      <h2 className="section-title">{title}</h2>
       {!isSent ? (
         <form onSubmit={handleSubmit}>
           {fields.map((field) => {
@@ -41,6 +41,7 @@ export default function Section({ title, fields }) {
             const [key, value] = entry;
             return <p className={key} key={key}>{value}</p>;
           })}
+          <button className="noprint">Edit</button>
         </div>
       )}
     </section>

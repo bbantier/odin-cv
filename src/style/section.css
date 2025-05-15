@@ -13,4 +13,17 @@ div#root {
   width: 100%;
   box-shadow: var(--shadow);
   border-radius: 15px;
+  transition: width 0.3s linear, box-shadow 0.3s ease-out;
+}
+
+.section.sent {
+  width: 19cm;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 1px solid;
+}
+
+h2.section-title {
+  text-align: center;
+  margin-bottom: 0.5em;
 }
