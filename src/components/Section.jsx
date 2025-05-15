@@ -2,12 +2,10 @@ import "../style/Section.css";
 import "../style/Form.css";
 import { useState } from "react";
 
-export default function Section({ title, fields }) {
+export default function Section({ title, fields, multi }) {
   const [data, setData] = useState({});
   const [isSent, setIsSent] = useState(false);
   const entries = Object.entries(data);
-
-  console.log(entries);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -53,7 +51,7 @@ export default function Section({ title, fields }) {
           <button type="submit">Submit</button>
         </form>
       ) : (
-        <div>
+        <div className="subsection">
           {entries.map((entry) => {
             const [key, value] = entry;
             return (
@@ -67,6 +65,9 @@ export default function Section({ title, fields }) {
           </button>
         </div>
       )}
+      {(multi && isSent) ? (
+        <button className="add-btn noprint">Add new</button>
+      ) : null}
     </section>
   );
 }

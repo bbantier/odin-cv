@@ -18,7 +18,7 @@ function App() {
     <>
       <h1 className="noprint">Build your CV</h1>
       <Section title={"Information"} fields={info} />
-      <Section title={"Education"} fields={edu} />
+      <Section title={"Education"} fields={edu} multi={true} />
     </>
   );
 }
