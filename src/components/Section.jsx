@@ -5,20 +5,24 @@ import { useState } from "react";
 export default function Section({ title, fields }) {
   const [data, setData] = useState({});
   const [isSent, setIsSent] = useState(false);
+  const entries = Object.entries(data);
+
+  console.log(entries);
 
   function handleSubmit(e) {
     e.preventDefault();
+
     const form = e.target;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
 
     setData(formJson);
     setIsSent(!isSent);
-
-    console.log(formJson);
   }
 
-  const entries = Object.entries(data);
+  function handleEdit() {
+    setIsSent(!isSent);
+  }
 
   return (
     <section className={"section" + (isSent ? " sent" : "")}>
@@ -29,7 +33,17 @@ export default function Section({ title, fields }) {
             return (
               <div key={field.name} className="input-wrapper">
                 <label htmlFor={field.name}>{field.label}</label>
-                <input name={field.name}></input>
+                <input
+                  name={field.name}
+                  defaultValue={
+                    data
+                      ? entries.find((entry) => {
+                          const [key, _value] = entry;
+                          return key === field.name;
+                        }, "")[1]
+                      : ""
+                  }
+                ></input>
               </div>
             );
           })}
@@ -39,9 +53,15 @@ export default function Section({ title, fields }) {
         <div>
           {entries.map((entry) => {
             const [key, value] = entry;
-            return <p className={key} key={key}>{value}</p>;
+            return (
+              <p className={key} key={key}>
+                {value}
+              </p>
+            );
           })}
-          <button className="noprint">Edit</button>
+          <button onClick={handleEdit} className="edit-btn noprint">
+            Edit
+          </button>
         </div>
       )}
     </section>
