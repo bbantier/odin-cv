@@ -24,6 +24,16 @@ export default function Section({ title, fields }) {
     setIsSent(!isSent);
   }
 
+  function getValue(name) {
+    const entry = entries.find((entry) => {
+      const [key, _value] = entry;
+      return key === name;
+    })
+
+    return !entry ? "" : entry[1];
+
+  }
+
   return (
     <section className={"section" + (isSent ? " sent" : "")}>
       <h2 className="section-title">{title}</h2>
@@ -35,14 +45,7 @@ export default function Section({ title, fields }) {
                 <label htmlFor={field.name}>{field.label}</label>
                 <input
                   name={field.name}
-                  defaultValue={
-                    data
-                      ? entries.find((entry) => {
-                          const [key, _value] = entry;
-                          return key === field.name;
-                        }, "")[1]
-                      : ""
-                  }
+                  defaultValue={getValue(field.name)}
                 ></input>
               </div>
             );
