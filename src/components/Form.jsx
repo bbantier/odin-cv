@@ -1,3 +1,5 @@
+import "../style/Form.css";
+
 export default function Form({ fields, submitFunction, previous }) {
   const getValue = (fieldName) => {
     const entry = previous.find((field) => {

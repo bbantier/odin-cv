@@ -1,0 +1,16 @@
+.fname,
+.school {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+div.submitted {
+  position: relative;
+}
+
+.edit-btn {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+}

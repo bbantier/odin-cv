@@ -27,19 +27,6 @@ h2.section-title {
   text-align: center;
 }
 
-.edit-btn {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-}
-
 .subsection:not(:last-child) {
   margin-bottom: 15px;
-}
-
-.fname,
-.school {
-  font-size: 1.1em;
-  font-weight: 700;
-  margin-bottom: 0.5em;
 }

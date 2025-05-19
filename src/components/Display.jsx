@@ -1,3 +1,5 @@
+import "../style/Display.css";
+
 export default function Display({ entries, editFunction }) {
   return (
     <div className="submitted">
