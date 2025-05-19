@@ -11,7 +11,7 @@ export default function Form({ fields, submitFunction, previous }) {
   };
 
   return (
-    <form onSubmit={submitFunction}>
+    <form className="noprint" onSubmit={submitFunction}>
       {fields.map((field) => {
         return (
           <div key={field.name} className="input-wrapper">

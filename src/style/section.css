@@ -5,28 +5,29 @@
 .section {
   margin: 0 auto;
   padding: 15px;
-  width: 50%;
   box-shadow: var(--shadow);
   border-radius: 15px;
-  transition: width 0.1s linear, box-shadow 0.1s ease-out;
+  transition: box-shadow 0.2s ease-out;
 }
 
-.section:has(div.submitted) {
-  position: relative;
-  width: 19cm;
-  box-shadow: none;
+.section:has(.submitted) {
   border-radius: 0;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid black;
+  box-shadow: none;
 }
 
-h2.section-title {
-  margin-bottom: 0.8em;
-}
-
-.section.sent h2.section-title {
+.section-title {
   text-align: center;
+  margin-bottom: 15px;
 }
 
-.subsection:not(:last-child) {
-  margin-bottom: 15px;
+.subsection {
+  margin: 0 auto;
+  width: 400px;
+  margin-bottom: 25px;
+  transition: width 0.2s ease-out;
+}
+
+.subsection:has(.submitted) {
+  width: 19cm;
 }
